@@ -64,12 +64,6 @@
         }
 
         .section {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .section.active {
             opacity: 1;
             transform: translateY(0);
         }
@@ -195,7 +189,6 @@
             font-size: 3.5rem;
             margin-bottom: 20px;
             line-height: 1.2;
-            transition: all 0.5s ease;
         }
 
         .hero p {
@@ -203,25 +196,6 @@
             max-width: 800px;
             margin: 0 auto 40px;
             color: rgba(255, 255, 255, 0.8);
-            transition: all 0.5s ease 0.1s;
-        }
-
-        .hero .btn-gradient {
-            transition: all 0.5s ease 0.2s;
-        }
-
-        .hero.active h1,
-        .hero.active p,
-        .hero.active .btn-gradient {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .hero h1,
-        .hero p,
-        .hero .btn-gradient {
-            opacity: 0;
-            transform: translateY(30px);
         }
 
         .features {
@@ -257,22 +231,7 @@
             padding: 30px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-left: 4px solid var(--primary);
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.6s ease, opacity 0.6s ease, transform 0.6s ease;
         }
-
-        .features.active .feature-card {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .features.active .feature-card:nth-child(1) { transition-delay: 0.1s; }
-        .features.active .feature-card:nth-child(2) { transition-delay: 0.2s; }
-        .features.active .feature-card:nth-child(3) { transition-delay: 0.3s; }
-        .features.active .feature-card:nth-child(4) { transition-delay: 0.4s; }
-        .features.active .feature-card:nth-child(5) { transition-delay: 0.5s; }
-        .features.active .feature-card:nth-child(6) { transition-delay: 0.6s; }
 
         .feature-card:hover {
             transform: translateY(-10px);
@@ -354,14 +313,6 @@
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: center;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-
-        .modules.active .module-card {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .module-info h3 {
@@ -414,20 +365,7 @@
             padding: 30px;
             text-align: center;
             transition: transform 0.3s ease;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.6s ease;
         }
-
-        .stats.active .stat-card {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .stats.active .stat-card:nth-child(1) { transition-delay: 0.1s; }
-        .stats.active .stat-card:nth-child(2) { transition-delay: 0.2s; }
-        .stats.active .stat-card:nth-child(3) { transition-delay: 0.3s; }
-        .stats.active .stat-card:nth-child(4) { transition-delay: 0.4s; }
 
         .stat-card:hover {
             transform: translateY(-10px);
@@ -461,14 +399,6 @@
             max-width: 1000px;
             margin: 0 auto;
             position: relative;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-
-        .testimonials.active .testimonial-slider {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .testimonial {
@@ -537,14 +467,6 @@
             background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-
-        .cta.active {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .cta h2 {
@@ -561,14 +483,6 @@
         footer {
             background-color: var(--dark-alt);
             padding: 60px 5% 30px;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-
-        footer.active {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .footer-grid {
@@ -1168,59 +1082,15 @@
             const overlay = document.querySelector('.transition-overlay');
             
             // Initial page load animation
-            overlay.classList.add('active');
-            
-            // Remove overlay after animation completes
             setTimeout(() => {
-                overlay.style.display = 'none';
+                overlay.classList.add('active');
                 
-                // Activate hero section animations
-                document.querySelector('.hero').classList.add('active');
-                
-                // Initialize scroll animations
-                initScrollAnimations();
-            }, 1200);
+                // Remove overlay after animation completes
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                }, 1200);
+            }, 100);
         });
-
-        // Initialize scroll animations
-        function initScrollAnimations() {
-            const sections = document.querySelectorAll('.section');
-            
-            // Convert NodeList to Array for easier manipulation
-            const sectionsArray = Array.from(sections);
-            
-            // Add scroll event listener
-            window.addEventListener('scroll', () => {
-                // Header visibility toggle
-                const header = document.querySelector('header');
-                let lastScroll = window.scrollY;
-                
-                if (lastScroll > 100) {
-                    if (lastScroll > window.scrollY) {
-                        header.classList.add('visible');
-                        header.classList.remove('hidden');
-                    } else {
-                        header.classList.add('hidden');
-                        header.classList.remove('visible');
-                    }
-                } else {
-                    header.classList.remove('hidden');
-                }
-                
-                // Section animations
-                sectionsArray.forEach(section => {
-                    const sectionTop = section.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    
-                    if (sectionTop < windowHeight * 0.75) {
-                        section.classList.add('active');
-                    }
-                });
-            });
-            
-            // Trigger initial check in case sections are already visible
-            window.dispatchEvent(new Event('scroll'));
-        }
 
         // Mobile Menu Toggle
         const mobileMenuBtn = document.querySelector('.mobile-menu');
