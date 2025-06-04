@@ -1,3006 +1,1578 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Lyna</title>
-	<link rel="stylesheet" href="style.css" />
-  </head>
-
-  <body>
-	<main>
-		<!--Loader-->
- <section id="load">
-		<div class="spinner-cube">
-		  <div class="load">
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-		  </div>
-		</div>
-		<p class="text">Loading...</p>
-	  </section>
-	  <!--sound-->
-	  <section id="sound">
-		<div class="nos">
-		  <div class="header">
-			<h5>Play Background Music</h5>
-		  </div>
-		  <div class="yesno">
-			<button onclick="soundTrue()">Yes</button>
-			<button style="float: right" onclick="soundFalse()">No</button>
-		  </div>
-		</div>
-	  </section>
-	  <section id="main">
-		<!---------- main menu  -------->
-		<div id="menu" class="mainMenu">
-		  <div class="container">
-			<div class="header">
-			  <h1>
-				Lyna Puzzle
-				<hr />
-				<hr style="width: 70%; margin-top: 5px" />
-				<hr style="width: 50%; margin-top: 5px" />
-			  </h1>
-			</div>
-			<div class="menu grid-container">
-			  <button onclick="levelOne();" class="grid-item">
-				Start Game
-			  </button>
-			  <button onclick="Level()" class="grid-item">Level</button>
-			  <button onclick="Instruction()" class="grid-item">
-				Instruction
-			  </button>
-			  <button onclick="About()" class="grid-item">About</button>
-			  <button onclick="exitGame()" class="grid-item">Exit</button>
-			</div>
-			<div class="footer">
-			  <h3>
-				&copy;2025 <br />
-				Dev Ofori
-			  </h3>
-			</div>
-		  </div>
-		</div>
-		<!---------- level  -------->
-		<div id="level">
-		  <div class="container">
-			<div class="head">
-			  <h1>
-				Select Level
-				<hr />
-			  </h1>
-			</div>
-			<div class="level-area">
-			  <div class="grid-container">
-				<button id="b1" onclick="levelOne()" class="lvlbtn">
-				  Level 1
-				</button>
-				<button id="b2" onclick="levelTwo()" class="lvlbtn">
-				  Level 2
-				</button>
-				<button id="b3" onclick="levelThree()" class="lvlbtn">
-				  Level 3
-				</button>
-				<button id="b4" onclick="levelFour()" class="lvlbtn">
-				  Level 4
-				</button>
-				<button id="b5" onclick="levelFive()" class="lvlbtn">
-				  Level 5
-				</button>
-				<button id="b6" onclick="levelSix()" class="lvlbtn">
-				  Level 6
-				</button>
-				<button id="b7" onclick="levelSeven()" class="lvlbtn">
-				  Level 7
-				</button>
-				<button id="b8" onclick="levelEight()" class="lvlbtn">
-				  Level 8
-				</button>
-				<button id="b9" onclick="levelNine()" class="lvlbtn">
-				  Level 9
-				</button>
-				<button id="b10" onclick="levelTen()" class="lvlbtn">
-				  Level 10
-				</button>
-				<button id="b11" onclick="levelEleven()" class="lvlbtn">
-				  Level 11
-				</button>
-				<button id="b12" onclick="levelTwelve()" class="lvlbtn">
-				  Level 12
-				</button>
-				<button id="b13" onclick="levelThirteen()" class="lvlbtn">
-				  Level 13
-				</button>
-				<button id="b14" onclick="levelFourteen()" class="lvlbtn">
-				  Level 14
-				</button>
-				<button id="b15" onclick="levelFifteen()" class="lvlbtn">
-				  Level 15
-				</button>
-			  </div>
-			</div>
-			<div class="grid-container">
-			  <button id="backButton" onclick="backButton()" class="grid-item">
-				Back
-			  </button>
-			</div>
-			<div class="footer">
-			  <h3>
-				&copy;2025 <br />
-				Dev Ofori
-			  </h3>
-			</div>
-		  </div>
-		</div>
-		<!---------- about  -------->
-		<div id="about">
-		  <div class="container">
-			<div class="head">
-			  <h1>
-				About Game
-				<hr />
-			  </h1>
-			  <div class="about-s">
-				<p>
-				 <h4> Lyna Puzzle</h4>
-				  Version: 0.1<br />
-				  All Rights Reserved&copy;
-				</p>
-			  </div>
-			</div>
-			<div class="grid-container">
-			  <button id="backButton" onclick="backButton()" class="grid-item">
-				Back
-			  </button>
-			</div>
-			<div class="footer">
-			  <h3>
-				&copy;2020 <br />
-				Dev Ofori
-			  </h3>
-			</div>
-		  </div>
-		</div>
-		<!---------- instruction  -------->
-		<div id="instruction">
-		  <div class="container">
-			<div class="head">
-			  <h1>
-				Instruction
-				<hr />
-			  </h1>
-			  <div class="gameplay">
-				<p>
-				  Choose a level to start the game or Start game. You will see
-				  random numbers.(See the Picture below)
-				  <img
-					src="https://i.ibb.co/Hrz2bMc/screencapture-127-0-0-1-5500-2020-09-06-18-38-07.png"
-				  />
-				</p>
-				<p>
-				  Complete the Puzzle before you out of moves to Win(See the
-				  picture below). Double tap will be also count, so be careful when move.
-				  <img
-					src="https://i.ibb.co/0ZSg7CY/screencapture-127-0-0-1-5500-2020-09-06-18-39-13.png"
-				  />
-				</p>
-			  </div>
-			</div>
-
-			<div class="grid-container">
-			  <button id="backButton" onclick="backButton()" class="grid-item">
-				Back
-			  </button>
-			</div>
-			<div class="footer">
-			  <h3>
-				&copy;2020 <br />
-				Dev Ofori
-			  </h3>
-			</div>
-		  </div>
-		</div>
-		<div id="lvl">
-		  <div class="container">
-			<div class="head">
-			  <h1 id="lvlname">
-				Level One
-				<hr />
-			  </h1>
-			</div>
-			<div class="leveldesign">
-			  <div class="movement">
-				<!-- <div class="clearfix"> -->
-				<strong>Moved: <span id="moved"> </span></strong>
-				<b>Moves: <span id="moves"> </span></b>
-				<!-- </div> -->
-			  </div>
-			  <div class="grid-container">
-				<button class="btn" id="btn1"></button>
-				<button class="btn" id="btn2"></button>
-				<button class="btn" id="btn3"></button>
-				<button class="btn" id="btn4"></button>
-				<button class="btn" id="btn5"></button>
-				<button class="btn" id="btn6"></button>
-				<button class="btn" id="btn7"></button>
-				<button class="btn" id="btn8"></button>
-				<button class="btn" id="btn9"></button>
-			  </div>
-			</div>
-			<div class="grid-container">
-			  <button
-				id="resetButton"
-				onclick="resetButton()"
-				class="grid-item"
-			  >
-				Restart
-			  </button>
-			</div>
-			<div class="grid-container">
-			  <button id="backButton" onclick="backButton()" class="grid-item">
-				Back
-			  </button>
-			</div>
-		  </div>
-		</div>
-		<!-- winner  -->
-		<div id="winner" class="winner">
-		  <div class="modal">
-			<div class="top">
-			  <div style="box-shadow: none" class="container">
-				<h1 id="qoute"></h1>
-				<p id="congo">
-				  <strong id="trp">&#127942;</strong>
-
-				  <span id="star1">☆</span>
-				  <span id="star2">☆</span>
-				  <span id="star3">☆</span>
-				  <span id="star4">☆</span>
-				  <span id="star5">☆</span>
-				  <b id="lvlc">Level Completed</b>
-				</p>
-				<p id="over">
-				  <b>Oho! </br>Odoyewu Try Again</b>
-				  <span id="sad"> &#128546; </span>
-				</p>
-				<div class="grid-container">
-				  <button
-					onclick="tryAgain()"
-					id="playAgain"
-					class="grid-item"
-				  ></button>
-				  <button onclick="nextLevel()" id="nextLvl" class="grid-item">
-					Next Level
-				  </button>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		</div>
-	  </section>
-	  <!--Exit-->
-	  <div id="exit">
-		 <h2 class="exit">I love You Lyna
-		 <br>❤️❤️❤️❤️
-		 </h2> 
-	  </div>
-	  <!-- Audio resources  -->
-
-	  <audio id="clickClip">
-		<source
-		  src="https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-one/multimedia_button_click_013.mp3"
-		  type="audio/mpeg"
-		/>
-	  </audio>
-	  <audio id="clickClip2">
-		<source
-		  src="https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-46416/zapsplat_multimedia_button_click_fast_plastic_49161.mp3"
-		  type="audio/mpeg"
-		/>
-	  </audio>
-	  <audio id="gameoverClip">
-		<source
-		  src="https://pic.pikbest.com/00/60/58/37j888piCfxy.mp3"
-		  type="audio/mpeg"
-		/>
-	  </audio>
-	  <audio id="congratsClip">
-		<source
-		  src="https://previews.customer.envatousercontent.com/files/203455285/preview.mp3"
-		  type="audio/mpeg"
-		/>
-	  </audio>
-	   <audio id="Clip">
-		<source
-		  src="https://www.halmblog.com/wp-content/uploads/2018/09/TeePhlow-Forgive-ft-Adina-Prod-By-MollesBeatz.mp3"
-		  type="audio/mpeg"
-		/>
-	  </audio>
-	</main>
-
-	<script>
-		
-		//JAVASCRIPT START//
-		
-function loadPage() {
-   setTimeout(showPage, 3000);
-}
- loadPage();
- 
-function showPage() {
-  document.getElementById("load").style.display = "none";
- document.getElementById("sound").style.display = "block";
- alert("I Love You, Lyna... 😊");
-}
-///////////////////////////////////
-//Tab open and close//
-//Get the items from DOM//
-
-var about = document.getElementById("about");
-var instruction = document.getElementById("instruction");
-var menu = document.getElementById("menu");
-var level = document.getElementById("level");
-var moves = document.getElementById("moves");
-var moved = document.getElementById("moved");
-var levels = document.getElementById("lvl");
-
-//Toggle area start//
-//instrcution button
-function Instruction() {
-  menu.style.display = "none";
-  level.style.display = "none";
-  instruction.style.display = "block";
-  btnClickAll.play();
-}
-//About button
-function About() {
-  menu.style.display = "none";
-  level.style.display = "none";
-  about.style.display = "block";
-  btnClickAll.play();
-}
-//Level button
-function Level() {
-  menu.style.display = "none";
-  about.style.display = "none";
-  level.style.display = "block";
-  btnClickAll.play();
-}
-//Back button
-function backButton() {
-  menu.style.display = "block";
-  if (
-	about.style.display == "block" ||
-	instruction.style.display == "block" ||
-	level.style.display == "block" || levels.style.display == "block"
-  ) {
-	menu.style.display = "block";
-	level.style.display = "none";
-	about.style.display = "none";
-	instruction.style.display = "none";
-	levels.style.display = "none";
-  }
-  btnClickAll.play();
-}
-///////Toggle area end////////
-///////Tab open and close end////////
-
-
-//////////////////////////////////////////
-// All Audio Resources
-var btnClicked = document.getElementById("clickClip");
-var btnClickAll = document.getElementById("clickClip2");
-var gameoverClip = document.getElementById("gameoverClip");
-var congratsClip = document.getElementById("congratsClip");
-
-
-//Level Button Selection
-var b1 = document.getElementById("b1");
-var b2 = document.getElementById("b2");
-var b3 = document.getElementById("b3");
-var b4 = document.getElementById("b4");
-var b5 = document.getElementById("b5");
-var b6 = document.getElementById("b6");
-var b7 = document.getElementById("b7");
-var b8 = document.getElementById("b8");
-var b9 = document.getElementById("b9");
-var b10 = document.getElementById("b10");
-var b11 = document.getElementById("b11");
-var b12 = document.getElementById("b12");
-var b13 = document.getElementById("b13");
-var b14 = document.getElementById("b14");
-var b15 = document.getElementById("b15");
-
-
-//Level Design start//
-//Buttons of puzzle//
-var btn1 = document.getElementById("btn1");
-var btn2 = document.getElementById("btn2");
-var btn3 = document.getElementById("btn3");
-var btn4 = document.getElementById("btn4");
-var btn5 = document.getElementById("btn5");
-var btn6 = document.getElementById("btn6");
-var btn7 = document.getElementById("btn7");
-var btn8 = document.getElementById("btn8");
-var btn9 = document.getElementById("btn9");
-
-//Game over and Winner Values//
-var tryagain = document.getElementById("playAgain");
-var next = document.getElementById("nextLvl");
-var levelName = document.getElementById("lvlname");
-var winner = document.getElementById("winner");
-var qoute = document.getElementById("qoute");
-var over = document.getElementById("over");
-var congo = document.getElementById("congo");
-var lvlc = document.getElementById("lvlc");
-
-// Start Rating Value
-var star1 = document.getElementById("star1");
-var star2 = document.getElementById("star2");
-var star3 = document.getElementById("star3");
-var star4 = document.getElementById("star4");
-var star5 = document.getElementById("star5");
-
-// Values for all in Game button
-//This will use on every level decleration
-function buttonValues(
-  value1,
-  value2,
-  value3,
-  value4,
-  value5,
-  value6,
-  value7,
-  value8,
-  value9
-) {
-  this.value1 = value1;
-  this.value2 = value2;
-  this.value3 = value3;
-  this.value4 = value4;
-  this.value5 = value5;
-  this.value6 = value6;
-  this.value7 = value7;
-  this.value8 = value8;
-  this.value9 = value9;
-
-  btn1.value = value1;
-  btn1.innerText = value1;
-
-  btn2.value = value2;
-  btn2.innerText = value2;
-
-  btn3.value = value3;
-  btn3.innerText = value3;
-
-  btn4.value = value4;
-  btn4.innerText = value4;
-
-  btn5.value = value5;
-  btn5.innerText = value5;
-
-  btn6.value = value6;
-  btn6.innerText = value6;
-
-  btn7.value = value7;
-  btn7.innerText = value7;
-
-  btn8.value = value8;
-  btn8.innerText = value8;
-
-  btn9.value = value9;
-  btn9.innerText = value9;
-}
-
-// Movement for Button one//
-btn1.addEventListener("click", function () {
-
-  /*
-  The value of Button 1 can transferred to:
-  1  = 2, 4
-  */
-
-  //get the value of button 1.
-  var val = btn1.value;
-  //If value of button 2 is undefined,
-  //then the value of button 1 will be transferred to 2.
-  if (btn2.value == "") {
-	btn2.innerText = val;
-	btn1.innerText = "";
-	btn2.value = val;
-	btn1.value = "";
-
-  }
-  //If value of button 4 is undefined,
-  //then the value of button 1 will be transferred to button 4.
-  else if (btn4.value == "") {
-	btn4.innerText = val;
-	btn1.innerText = "";
-	btn4.value = val;
-	btn1.value = "";
-  }
-
-  //THIS PART IS SAME TO ALL SECTION//
-  //Execute if true
-  winnerCode();
-  //movement will be decrease on evevry click
-  moved.value--;
-  //movement will be increase as text on evevry click
-  moved.innerText++;
-  //Execute if true
-  gameOver();
-  //Sound on everyclick
-  btnClicked.play();
-
-});
-
-btn2.addEventListener("click", function () {
-
-/*
-The value of Button 2 can transferred to:
-2  = 1, 3, 5
-*/
-
-  //get the value of button 2.
-  var val = btn2.value;
-
-  //If value of button 1 is undefined,
-  //then the value of button 2 will be transferred to button 1.
-  if (btn1.value == "") {
-	btn1.innerText = val;
-	btn2.innerText = "";
-	btn1.value = val;
-	btn2.value = "";
-  } 
-  //If value of button 3 is undefined,
-  //then the value of button 2 will be transferred to button 3.
-  else if (btn3.value == "") {
-	btn3.innerText = val;
-	btn2.innerText = "";
-	btn3.value = val;
-	btn2.value = "";
-  } 
-  //If value of button 5 is undefined,
-  //then the value of button 2 will be transferred to button 5.
-  else if (btn5.value == "") {
-	btn5.innerText = val;
-	btn2.innerText = "";
-	btn5.value = val;
-	btn2.value = "";
-  }
-  winnerCode();
-  moved.value--;
-  moved.innerText++;
-  gameOver();
-  btnClicked.play();
-});
-btn3.addEventListener("click", function () {
-
-/*
-The value of Button 3 can transferred to:
-3  = 2, 6
-*/
-
-  //get the value of button 3.
-  var val = btn3.value;
-
-  //If value of button 2 is undefined,
-  //then the value of button 3 will be transferred to button 2.
-  if (btn2.value == "") {
-	btn2.innerText = val;
-	btn3.innerText = "";
-	btn2.value = val;
-	btn3.value = "";
-  } 
-  //If value of button 6 is undefined,
-  //then the value of button 3 will be transferred to button 6.
-  else if (btn6.value == "") {
-	btn6.innerText = val;
-	btn3.innerText = "";
-	btn6.value = val;
-	btn3.value = "";
-  }
-  winnerCode();
-  moved.value--;
-  moved.innerText++;
-  gameOver();
-  btnClicked.play();
-});
-
-btn4.addEventListener("click", function () {
-
-/*
-The value of Button 4 can transferred to:
-4  = 1, 5, 7
-*/
-
-  //get the value of button 4.
-  var val = btn4.value;
-
-  //If value of button 1 is undefined,
-  //then the value of button 4 will be transferred to button 1.
-  if (btn1.value == "") {
-	btn1.innerText = val;
-	btn4.innerText = "";
-	btn1.value = val;
-	btn4.value = "";
-  } 
-  //If value of button 5 is undefined,
-  //then the value of button 4 will be transferred to button 5.
-  else if (btn5.value == "") {
-	btn5.innerText = val;
-	btn4.innerText = "";
-	btn5.value = val;
-	btn4.value = "";
-  } 
-  //If value of button 7 is undefined,
-  //then the value of button 4 will be transferred to button 7.
-  else if (btn7.value == "") {
-	btn7.innerText = val;
-	btn4.innerText = "";
-	btn7.value = val;
-	btn4.value = "";
-  }
-  winnerCode();
-  moved.value--;
-  moved.innerText++;
-  gameOver();
-  btnClicked.play();
-});
-
-btn5.addEventListener("click", function () {
-/*
-The value of Button 5 can transferred to:
-5  = 2, 4, 6, 8
-*/
-
-  //get the value of button 5.
-  var val = btn5.value;
-
-  //If value of button 2 is undefined,
-  //then the value of button 5 will be transferred to button 2.
-  if (btn2.value == "") {
-	btn2.innerText = val;
-	btn5.innerText = "";
-	btn2.value = val;
-	btn5.value = "";
-  } 
-  //If value of button 4 is undefined,
-  //then the value of button 5 will be transferred to button 4.
-  else if (btn4.value == "") {
-	btn4.innerText = val;
-	btn5.innerText = "";
-	btn4.value = val;
-	btn5.value = "";
-  } 
-  //If value of button 6 is undefined,
-  //then the value of button 5 will be transferred to button 6.
-  else if (btn6.value == "") {
-	btn6.innerText = val;
-	btn5.innerText = "";
-	btn6.value = val;
-	btn5.value = "";
-  } 
-  //If value of button 8 is undefined,
-  //then the value of button 5 will be transferred to button 8.
-  else if (btn8.value == "") {
-	btn8.innerText = val;
-	btn5.innerText = "";
-	btn8.value = val;
-	btn5.value = "";
-  }
-  winnerCode();
-  moved.value--;
-  moved.innerText++;
-  gameOver();
-  btnClicked.play();
-});
-
-btn6.addEventListener("click", function () {
-
-/*
-The value of Button 6 can transferred to:
-6  = 3, 5, 9
-*/
-
-  //get the value of button 6.
-  var val = btn6.value;
-
-  //If value of button 3 is undefined,
-  //then the value of button 6 will be transferred to button 3.
-  if (btn3.value == "") {
-	btn3.innerText = val;
-	btn6.innerText = "";
-	btn3.value = val;
-	btn6.value = "";
-  } 
-  //If value of button 5 is undefined,
-  //then the value of button 6 will be transferred to button 5.
-  else if (btn5.value == "") {
-	btn5.innerText = val;
-	btn6.innerText = "";
-	btn5.value = val;
-	btn6.value = "";
-  } 
-  //If value of button 9 is undefined,
-  //then the value of button 6 will be transferred to button 9.
-  else if (btn9.value == "") {
-	btn9.innerText = val;
-	btn6.innerText = "";
-	btn9.value = val;
-	btn6.value = "";
-  }
-  winnerCode();
-  moved.value--;
-  moved.innerText++;
-  gameOver();
-  btnClicked.play();
-});
-
-btn7.addEventListener("click", function () {
-
-/*
-The value of Button 7 can transferred to:
-7  = 4, 8
-*/
-
-  //get the value of button 7.
-  var val = btn7.value;
-
-  //If value of button 4 is undefined,
-  //then the value of button 7 will be transferred to button 4.
-  if (btn4.value == "") {
-	btn4.innerText = val;
-	btn7.innerText = "";
-	btn4.value = val;
-	btn7.value = "";
-  } 
-  //If value of button 8 is undefined,
-  //then the value of button 7 will be transferred to button 8.
-  else if (btn8.value == "") {
-	btn8.innerText = val;
-	btn7.innerText = "";
-	btn8.value = val;
-	btn7.value = "";
-  }
-  winnerCode();
-  moved.value--;
-  moved.innerText++;
-  gameOver();
-  btnClicked.play();
-});
-
-btn8.addEventListener("click", function () {
-
-/*
-The value of Button 8 can transferred to:
-8  = 5, 7, 9
-*/
-
-  //get the value of button 8.
-  var val = btn8.value;
-
-  //If value of button 5 is undefined,
-  //then the value of button 8 will be transferred to button 5.
-  if (btn5.value == "") {
-	btn5.innerText = val;
-	btn8.innerText = "";
-	btn5.value = val;
-	btn8.value = "";
-  } 
-  //If value of button 7 is undefined,
-  //then the value of button 8 will be transferred to button 7.
-  else if (btn7.value == "") {
-	btn7.innerText = val;
-	btn8.innerText = "";
-	btn7.value = val;
-	btn8.value = "";
-  } 
-  //If value of button 9 is undefined,
-  //then the value of button 8 will be transferred to button 9.
-  else if (btn9.value == "") {
-	btn9.innerText = val;
-	btn8.innerText = "";
-	btn9.value = val;
-	btn8.value = "";
-  }
-  winnerCode();
-  moved.value--;
-  moved.innerText++;
-  gameOver();
-  btnClicked.play();
-});
-
-btn9.addEventListener("click", function () {
-
-/*
-The value of Button 9 can transferred to:
-9  = 6, 8
-*/
-
-  //get the value of button 9.
-
-  //If value of button 6 is undefined,
-  //then the value of button 9 will be transferred to button 6.
-  var val = btn9.value;
-  if (btn6.value == "") {
-	btn6.innerText = val;
-	btn9.innerText = "";
-	btn6.value = val;
-	btn9.value = "";
-  } 
-  //If value of button 8 is undefined,
-  //then the value of button 9 will be transferred to button 8.
-  else if (btn8.value == "") {
-	btn8.innerText = val;
-	btn9.innerText = "";
-	btn8.value = val;
-	btn9.value = "";
-  }
-  winnerCode();
-  moved.value--;
-  moved.innerText++;
-  gameOver();
-  btnClicked.play();
-});
-
-//Try Again Function of Failed complete Level
-function tryAgain() {
-  winner.style.display = "none";
-  //Reset Button will be work as try again
-  resetButton();
-}
-
-//Next Level Function for after Every level complete
-function nextLevel() {
-  winner.style.display = "none";
-
-
-  //If Level one is completed then go to level two(same logic for each function)
-  if (b1.value == "1") {
-	levelTwo();
-  } else if (b2.value == "1") {
-	levelThree();
-  } else if (b3.value == "1") {
-	levelFour();
-  } else if (b4.value == "1") {
-	levelFive();
-  } else if (b5.value == "1") {
-	levelSix();
-  } else if (b6.value == "1") {
-	levelSeven();
-  } else if (b7.value == "1") {
-	levelEight();
-  } else if (b8.value == "1") {
-	levelNine();
-  } else if (b9.value == "1") {
-	levelTen();
-  } else if (b10.value == "1") {
-	levelEleven();
-  } else if (b11.value == "1") {
-	levelTwelve();
-  } else if (b12.value == "1") {
-	levelThirteen();
-  } else if (b13.value == "1") {
-	levelFourteen();
-  } else if (b14.value == "1") {
-	levelFifteen();
-  } else if (b15.value == "1") {
-	levelOne();
-  }
-}
-
-//One time function for Congrats, this one function will hendle all winning part of the game
-function winning(val1, val2, val3, val4, val5, val6, val7, val8, val9, val10, val11, val12) {
-  this.val1 = val1;
-  this.val2 = val2;
-  this.val3 = val3;
-  this.val4 = val4;
-  this.val5 = val5;
-  this.val6 = val6;
-  this.val7 = val7;
-  this.val8 = val8;
-  this.val9 = val9;
-  this.val10 = val10;
-  this.val11 = val11;
-  this.val12 = val12;
-  next.style.display = val1;
-  next.style.innerText = val2;
-  tryagain.innerText = val3;
-  qoute.innerHTML = val4;
-  over.style.display = val5;
-  congo.style.display = val6;
-  winner.style.display = val7;
-  star1.className = val8;
-  star2.className = val9;
-  star3.className = val10;
-  star4.className = val11;
-  star5.className = val12;
-
-
-}
-
-//So this is the logical part of winner
-function winnerCode() {
-
-  //if each buttons values is puzzled same then condition will try, then it will execute each block by the value of movement
-  if (
-	btn1.value == 1 &&
-	btn2.value == 2 &&
-	btn3.value == 3 &&
-	btn4.value == 4 &&
-	btn5.value == 5 &&
-	btn6.value == 6 &&
-	btn7.value == 7 &&
-	btn8.value == 8 &&
-	btn9.value == ""
-  ) {
-		   //If puzzle completed within given moves then you will get rating
-	if (moved.innerText < "20") {
-	  new winning("block", "Next Level", "Play Again", "Congratulations!<hr>", "none", "block", "block", "fill", "fill", "fill", "fill", "fill");
-	  congratsClip.play();
-	} else if (moved.innerText < "30") {
-	  new winning("block", "Next Level", "Play Again", "Congratulations!<hr>", "none", "block", "block", "fill", "fill", "fill", "fill", "none");
-	  congratsClip.play();
-	} else if (moved.innerText < "40") {
-	  new winning("block", "Next Level", "Play Again", "Congratulations!<hr>", "none", "block", "block", "fill", "fill", "fill", "none", "none");
-	  congratsClip.play();
-	} else if (moved.innerText < "50") {
-	  new winning("block", "Next Level", "Play Again", "Congratulations!<hr>", "none", "block", "block", "fill", "fill", "none", "none", "none");
-	  congratsClip.play();
-	} else if (moved.innerText < "60") {
-	  new winning("block", "Next Level", "Play Again", "Congratulations!<hr>", "none", "block", "block", "fill", "none", "none", "none", "none");
-	  congratsClip.play();
-	}
-  }
-
-}
-
-//One time function for game over, this one function will hendle all lossing part of the game
-function overG(v1, v2, v3, v4, v5, v6) {
-  this.v1 = v1;
-  this.v2 = v2;
-  this.v3 = v2;
-  this.v4 = v4;
-  this.v5 = v5;
-  this.v6 = v6;
-
-  next.style.display = v1;
-  tryagain.innerText = v2;
-  qoute.innerHTML = v3;
-  over.style.display = v4;
-  congo.style.display = v5;
-  winner.style.display = v6;
-
-}
-
-//So this is the logical part of loser
-function gameOver() {
-  //if all moves finish then your game is over
-  if (moved.value == 0) {
-	new overG("none", "Try Again", "Game Over<hr>", "block", "none", "block");
-	gameoverClip.play();
-	congratsClip.pause();
-  }
-}
-//this is pretty simple function for reset all the value
-function resetButton() {
-  //when you will start the game play it will assign 1 value for the level you are playing
-  //so if you click on level 1 then it will assign 1 to b1(lvl 1) and rest of levels will be undefined
-  //then when you will tap on reset button it will check the values and execute the rest of things
-  //Isn't simple? :)
-  if (b1.value == "1") {
-	levelOne();
-  } else if (b2.value == "1") {
-	levelTwo();
-  } else if (b3.value == "1") {
-	levelThree();
-  } else if (b4.value == "1") {
-	levelFour();
-  } else if (b5.value == "1") {
-	levelFive();
-  } else if (b6.value == "1") {
-	levelSix();
-  } else if (b7.value == "1") {
-	levelSeven();
-  } else if (b8.value == "1") {
-	levelEight();
-  } else if (b9.value == "1") {
-	levelNine();
-  } else if (b10.value == "1") {
-	levelTen();
-  } else if (b11.value == "1") {
-	levelEleven();
-  } else if (b12.value == "1") {
-	levelTwelve();
-  } else if (b13.value == "1") {
-	levelThirteen();
-  } else if (b14.value == "1") {
-	levelFourteen();
-  } else if (b15.value == "1") {
-	levelFifteen();
-  }
-}
-
-/////////////////////////////////////////////////////////
-//Rest of part is pretty simple I just assigned values and DOM values for every Levels
-function levelOne() {
-  levelName.innerHTML = "Level One" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("1", "2", "3", "4", "", "5", "6", "7", "8");
-  moves.innerText = 20;
-  moves.value = 20;
-  moved.innerText = 0;
-  moved.value = 20;
-  btnClickAll.play();
-  b1.value = "1";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "";
-}
-function levelTwo() {
-  levelName.innerHTML = "Level Two" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("1", "2", "3", "4", "8", "6", "5", "7", "");
-  moves.innerText = 20;
-  moves.value = 20;
-  moved.innerText = 0;
-  moved.value = 20;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "1";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "";
-}
-function levelThree() {
-  levelName.innerHTML = "Level Three" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("1", "2", "3", "4", "5", "", "6", "7", "8");
-  moves.innerText = 30;
-  moves.value = 30;
-  moved.innerText = 0;
-  moved.value = 30;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "1";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "";
-  b13.value = "";
-  b14.value = "";
-  b15.value = "";
-}
-function levelFour() {
-  levelName.innerHTML = "Level Four" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-
-  new buttonValues("", "2", "1", "3", "4", "5", "6", "7", "8");
-  moves.innerText = 40;
-  moves.value = 40;
-  moved.innerText = 0;
-  moved.value = 40;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "1";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "";
-  b13.value = "";
-  b14.value = "";
-  b15.value = "";
-}
-function levelFive() {
-  levelName.innerHTML = "Level Five" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("1", "2", "", "4", "5", "6", "7", "8", "3");
-  moves.innerText = 40;
-  moves.value = 40;
-  moved.innerText = 0;
-  moved.value = 40;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "1";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "";
-  b13.value = "";
-  b14.value = "";
-  b15.value = "";
-}
-function levelSix() {
-  levelName.innerHTML = "Level Six" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("4", "1", "7", "3", "5", "6", "2", "8", "");
-  moves.innerText = 50;
-  moves.value = 50;
-  moved.innerText = 0;
-  moved.value = 50;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "1";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "";
-  b13.value = "";
-  b14.value = "";
-  b15.value = "";
-}
-function levelSeven() {
-  levelName.innerHTML = "Level Seven" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("3", "2", "5", "6", "8", "4", "7", "1", "");
-  moves.innerText = 50;
-  moves.value = 50;
-  moved.innerText = 0;
-  moved.value = 50;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "1";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "";
-  b13.value = "";
-  b14.value = "";
-  b15.value = "";
-}
-function levelEight() {
-  levelName.innerHTML = "Level Eight" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("8", "4", "3", "2", "7", "1", "5", "6", "");
-  moves.innerText = 60;
-  moves.value = 60;
-  moved.innerText = 0;
-  moved.value = 60;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "1";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "";
-  b13.value = "";
-  b14.value = "";
-  b15.value = "";
-}
-function levelNine() {
-  levelName.innerHTML = "Level Nine" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("6", "1", "3", "8", "7", "4", "2", "5", "");
-  moves.innerText = 60;
-  moves.value = 60;
-  moved.innerText = 0;
-  moved.value = 60;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "1";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "";
-  b13.value = "";
-  b14.value = "";
-  b15.value = "";
-}
-function levelTen() {
-  levelName.innerHTML = "Level Ten" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("6", "4", "5", "2", "7", "1", "3", "8", "");
-  moves.innerText = 60;
-  moves.value = 60;
-  moved.innerText = 0;
-  moved.value = 60;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "1";
-  b11.value = "";
-  b12.value = "";
-  b13.value = "";
-  b14.value = "";
-  b15.value = "";
-}
-function levelEleven() {
-  levelName.innerHTML = "Level Eleven" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("1", "3", "6", "5", "2", "4", "7", "8", "");
-  moves.innerText = 60;
-  moves.value = 60;
-  moved.innerText = 0;
-  moved.value = 60;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "1";
-  b12.value = "";
-  b13.value = "";
-  b14.value = "";
-  b15.value = "";
-}
-function levelTwelve() {
-  levelName.innerHTML = "Level Twelve" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("6", "3", "5", "8", "1", "7", "2", "4", "");
-  moves.innerText = 60;
-  moves.value = 60;
-  moved.innerText = 0;
-  moved.value = 60;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "1";
-  b13.value = "";
-  b14.value = "";
-  b15.value = "";
-}
-function levelThirteen() {
-  levelName.innerHTML = "Level Thirteen" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("8", "1", "4", "3", "2", "7", "5", "6", "");
-  moves.innerText = 60;
-  moves.value = 60;
-  moved.innerText = 0;
-  moved.value = 60;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "";
-  b13.value = "1";
-  b14.value = "";
-  b15.value = "";
-}
-function levelFourteen() {
-  levelName.innerHTML = "Level Fourteen" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("6", "8", "1", "2", "3", "7", "5", "4", "");
-  moves.innerText = 60;
-  moves.value = 60;
-  moved.innerText = 0;
-  moved.value = 60;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "";
-  b13.value = "";
-  b14.value = "1";
-  b15.value = "";
-}
-function levelFifteen() {
-  levelName.innerHTML = "Level Fifteen" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("4", "7", "2", "6", "5", "3", "8", "1", "");
-  moves.innerText = 60;
-  moves.value = 60;
-  moved.innerText = 0;
-  moved.value = 60;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "";
-  b13.value = "";
-  b14.value = "";
-  b15.value = "1";
-}
-  var playClip = document.getElementById("Clip");
-function soundTrue(){
-
-  playClip.play();
-  playClip.volume = 0.2;
-	document.getElementById("sound").style.display = "none";
-	document.getElementById("main").style.display = "block";
-	
-}
-function soundFalse(){
-  playClip.pause();
-	document.getElementById("sound").style.display = "none";
-	document.getElementById("main").style.display = "block";
-}
-
-function exitGame(){
-	document.getElementById("main").style.display = "none";
-	document.getElementById("exit").style.display = "block";
-	playClip.pause();
-}
-/////////////////////////
-///////THE END//////////
-		
-	</script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlgoNerd SMS | School Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #6e45e2;
+            --secondary: #88d3ce;
+            --dark: #121212;
+            --dark-alt: #1e1e1e;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --success: #28a745;
+            --danger: #dc3545;
+            --warning: #fd7e14;
+            --info: #17a2b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Page Transition Styles */
+        .transition-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            z-index: 9999;
+            transform: translateY(100%);
+            pointer-events: none;
+        }
+
+        .transition-overlay.active {
+            animation: slideUp 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(100%);
+            }
+            50% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+
+        .section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        .btn-gradient {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-gradient:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(110, 69, 226, 0.3);
+        }
+
+        header {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(18, 18, 18, 0.9);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: all 0.5s ease;
+        }
+
+        header.hidden {
+            transform: translateY(-100%);
+        }
+
+        header.visible {
+            transform: translateY(0);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            padding: 180px 5% 100px;
+            text-align: center;
+            background: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            transition: all 0.5s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: rgba(255, 255, 255, 0.8);
+            transition: all 0.5s ease 0.1s;
+        }
+
+        .hero .btn-gradient {
+            transition: all 0.5s ease 0.2s;
+        }
+
+        .hero.active h1,
+        .hero.active p,
+        .hero.active .btn-gradient {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero h1,
+        .hero p,
+        .hero .btn-gradient {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .features {
+            padding: 100px 5%;
+            background-color: var(--dark-alt);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--dark);
+            border-radius: 10px;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--primary);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease, opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .features.active .feature-card {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .features.active .feature-card:nth-child(1) { transition-delay: 0.1s; }
+        .features.active .feature-card:nth-child(2) { transition-delay: 0.2s; }
+        .features.active .feature-card:nth-child(3) { transition-delay: 0.3s; }
+        .features.active .feature-card:nth-child(4) { transition-delay: 0.4s; }
+        .features.active .feature-card:nth-child(5) { transition-delay: 0.5s; }
+        .features.active .feature-card:nth-child(6) { transition-delay: 0.6s; }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: var(--gray);
+        }
+
+        .modules {
+            padding: 100px 5%;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .module-card {
+            background-color: var(--dark-alt);
+            border-radius: 10px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .modules.active .module-card {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .module-info h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .module-info ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .module-info ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .module-info ul li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        .module-chart {
+            background-color: var(--dark);
+            border-radius: 10px;
+            padding: 20px;
+            height: 100%;
+            min-height: 300px;
+        }
+
+        .stats {
+            padding: 100px 5%;
+            background-color: var(--dark-alt);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-card {
+            background-color: var(--dark);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease;
+        }
+
+        .stats.active .stat-card {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stats.active .stat-card:nth-child(1) { transition-delay: 0.1s; }
+        .stats.active .stat-card:nth-child(2) { transition-delay: 0.2s; }
+        .stats.active .stat-card:nth-child(3) { transition-delay: 0.3s; }
+        .stats.active .stat-card:nth-child(4) { transition-delay: 0.4s; }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-card i {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .stat-card h3 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .stat-card p {
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .testimonials {
+            padding: 100px 5%;
+        }
+
+        .testimonial-slider {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .testimonials.active .testimonial-slider {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .testimonial {
+            background-color: var(--dark-alt);
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            display: none;
+        }
+
+        .testimonial.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 3px solid var(--primary);
+        }
+
+        .testimonial p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .testimonial h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .testimonial span {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            background-color: var(--gray);
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background-color: var(--primary);
+            transform: scale(1.2);
+        }
+
+        .cta {
+            padding: 100px 5%;
+            text-align: center;
+            background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .cta.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        footer {
+            background-color: var(--dark-alt);
+            padding: 60px 5% 30px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        footer.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .footer-col p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--dark);
+            border-radius: 50%;
+            color: var(--light);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Chatbot Styles */
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 15px;
+        }
+
+        .chatbot-toggle, .whatsapp-toggle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .chatbot-toggle:hover, .whatsapp-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .whatsapp-toggle {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+        }
+
+        .chatbot-window {
+            width: 350px;
+            height: 500px;
+            background-color: var(--dark-alt);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: none;
+            flex-direction: column;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .chatbot-window.active {
+            display: flex;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .chatbot-header {
+            padding: 15px 20px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chatbot-header h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .chatbot-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 12px 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .bot-message {
+            background-color: var(--dark);
+            color: var(--light);
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+
+        .user-message {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 15px;
+            background-color: var(--dark);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 30px;
+            background-color: var(--dark-alt);
+            color: var(--light);
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .chatbot-input button {
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 10px 15px;
+            background-color: var(--dark);
+            border-radius: 15px;
+            align-self: flex-start;
+            margin-bottom: 5px;
+        }
+
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--gray);
+            border-radius: 50%;
+            animation: typingAnimation 1.4s infinite ease-in-out;
+        }
+
+        .typing-dot:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typingAnimation {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-5px); }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background-color: var(--dark-alt);
+                flex-direction: column;
+                padding: 40px 20px;
+                transition: left 0.3s ease;
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 15px 0;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .module-card {
+                grid-template-columns: 1fr;
+            }
+
+            .module-chart {
+                min-height: 250px;
+            }
+
+            .chatbot-container {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .chatbot-window {
+                width: 300px;
+                height: 450px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Transition Overlay -->
+    <div class="transition-overlay"></div>
+
+    <header>
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <span class="gradient-text">AlgoNerd SMS</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#modules">Modules</a></li>
+                <li><a href="#stats">Stats</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Revolutionize Your School <span class="gradient-text">Management</span></h1>
+        <p>A comprehensive, secure, and user-friendly platform designed to streamline administrative tasks, enhance communication, and improve academic management for schools.</p>
+        <button class="btn-gradient">Request Demo</button>
+    </section>
+
+    <section class="features" id="features">
+        <div class="section-title">
+            <h2>Powerful <span class="gradient-text">Features</span></h2>
+            <p>Discover how our School Management System can transform your educational institution</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-user-shield"></i>
+                <h3>Role-Based Access</h3>
+                <p>Secure role-based authentication ensures only authorized users access sensitive data with encrypted storage.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-robot"></i>
+                <h3>AI-Proctored Exams</h3>
+                <p>Auto-captures candidate images to prevent malpractice with real-time facial detection monitoring.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-bell"></i>
+                <h3>Real-Time Alerts</h3>
+                <p>Automated email notifications for assignments, fees, admissions, announcements and more.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Cross-Platform</h3>
+                <p>Accessible on Windows, Mac, Web and Mobile with synchronized data across all platforms.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Advanced Analytics</h3>
+                <p>Comprehensive reports and visualizations for student performance and institutional metrics.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-globe"></i>
+                <h3>Built-In Website</h3>
+                <p>Optional customizable school website with direct integration to the management system.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="modules" id="modules">
+        <div class="section-title">
+            <h2>Integrated <span class="gradient-text">Modules</span></h2>
+            <p>Three specialized modules designed for each user group in your institution</p>
+        </div>
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="admin">Admin</button>
+            <button class="tab-btn" data-tab="teacher">Teacher</button>
+            <button class="tab-btn" data-tab="student">Student</button>
+        </div>
+        <div class="tab-content active" id="admin">
+            <div class="module-card">
+                <div class="module-info">
+                    <h3>Admin Management Module</h3>
+                    <ul>
+                        <li>Student Enrollment & Profile Management</li>
+                        <li>Admission Management with Online Screening</li>
+                        <li>Automated Fee Management & Reminders</li>
+                        <li>Customizable Grading System Setup</li>
+                        <li>User Access Control & Credential Management</li>
+                        <li>School-wide Announcements & Events</li>
+                        <li>Optional Built-In School Website</li>
+                    </ul>
+                    <button class="btn-gradient">Learn More</button>
+                </div>
+                <div class="module-chart">
+                    <canvas id="adminChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content" id="teacher">
+            <div class="module-card">
+                <div class="module-info">
+                    <h3>Teacher's Portal</h3>
+                    <ul>
+                        <li>Attendance Management & Reporting</li>
+                        <li>Grading System with Performance Analytics</li>
+                        <li>Assignment Creation & Distribution</li>
+                        <li>Deadline Tracking & Submission Guidelines</li>
+                        <li>Real-time Communication Alerts</li>
+                        <li>Student Interaction via Chat Forum</li>
+                        <li>Web & Android App Access</li>
+                    </ul>
+                    <button class="btn-gradient">Learn More</button>
+                </div>
+                <div class="module-chart">
+                    <canvas id="teacherChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content" id="student">
+            <div class="module-card">
+                <div class="module-info">
+                    <h3>Student's Portal</h3>
+                    <ul>
+                        <li>Assignment Viewing & Submission</li>
+                        <li>Deadline Reminders & Tracking</li>
+                        <li>School Announcements & Events</li>
+                        <li>Fee Payment History & Tracking</li>
+                        <li>Academic Performance Reports</li>
+                        <li>Attendance Record Monitoring</li>
+                        <li>Web & Mobile-Friendly Access</li>
+                    </ul>
+                    <button class="btn-gradient">Learn More</button>
+                </div>
+                <div class="module-chart">
+                    <canvas id="studentChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats" id="stats">
+        <div class="section-title">
+            <h2>By The <span class="gradient-text">Numbers</span></h2>
+            <p>Key statistics that demonstrate the impact of our School Management System</p>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <i class="fas fa-school"></i>
+                <h3>250+</h3>
+                <p>Schools Transformed</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <h3>50K+</h3>
+                <p>Active Users</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-tasks"></i>
+                <h3>85%</h3>
+                <p>Admin Tasks Automated</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-chart-pie"></i>
+                <h3>4.9/5</h3>
+                <p>User Satisfaction</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="section-title">
+            <h2>What Our <span class="gradient-text">Clients Say</span></h2>
+            <p>Hear from educational institutions that have transformed with our system</p>
+        </div>
+        <div class="testimonial-slider">
+            <div class="testimonial active">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dev Ofori">
+                <p>"Implementing AlgoNerd SMS has revolutionized our school administration. The AI-proctored exams alone have saved us countless hours of monitoring while ensuring academic integrity."</p>
+                <h4>Dev Ofori</h4>
+                <span>Software Developer, AlgoNerd</span>
+            </div>
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+                <p>"The teacher portal has made managing my classes so much easier. I can track attendance, grade assignments, and communicate with students all from one platform."</p>
+                <h4>Sarah Johnson</h4>
+                <span>High School Principal</span>
+            </div>
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Michael Chen">
+                <p>"As a school administrator, the comprehensive reporting and analytics have given me insights I never had before. We've improved operational efficiency by 40% since implementation."</p>
+                <h4>Michael Chen</h4>
+                <span>School District Administrator</span>
+            </div>
+            <div class="slider-nav">
+                <div class="slider-dot active" data-slide="0"></div>
+                <div class="slider-dot" data-slide="1"></div>
+                <div class="slider-dot" data-slide="2"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Ready to Transform Your School?</h2>
+        <p>Join hundreds of educational institutions that have streamlined their operations and enhanced learning with our comprehensive School Management System.</p>
+        <button class="btn-gradient">Get Started Today</button>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>AlgoNerd SMS</h3>
+                <p>A comprehensive, secure, and user-friendly platform designed to streamline administrative tasks, enhance communication, and improve academic management for schools.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#modules">Modules</a></li>
+                    <li><a href="#stats">Statistics</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Modules</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Admin Management</a></li>
+                    <li><a href="#">Teacher's Portal</a></li>
+                    <li><a href="#">Student's Portal</a></li>
+                    <li><a href="#">Built-In Website</a></li>
+                    <li><a href="#">Security Features</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> algonerd@gmail.com</p>
+                <p><i class="fas fa-globe"></i> www.algonerd.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Silicon Valley</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 AlgoNerd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Chatbot and WhatsApp Integration -->
+    <div class="chatbot-container">
+        <button class="whatsapp-toggle" id="whatsappBtn">
+            <i class="fab fa-whatsapp"></i>
+        </button>
+        <button class="chatbot-toggle" id="chatbotBtn">
+            <i class="fas fa-robot"></i>
+        </button>
+        
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h3>AlgoNerd SMS Assistant</h3>
+                <button class="chatbot-close" id="chatbotClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    Hello! I'm the AlgoNerd SMS assistant. How can I help you today?
+                </div>
+                <div class="message bot-message">
+                    Here are some things I can help with:
+                    <br>- Features of our School Management System
+                    <br>- Pricing information
+                    <br>- Demo requests
+                    <br>- Technical support
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="Type your message here...">
+                <button id="chatbotSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Page Transition Animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const overlay = document.querySelector('.transition-overlay');
+            
+            // Initial page load animation
+            overlay.classList.add('active');
+            
+            // Remove overlay after animation completes
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                
+                // Activate hero section animations
+                document.querySelector('.hero').classList.add('active');
+                
+                // Initialize scroll animations
+                initScrollAnimations();
+            }, 1200);
+        });
+
+        // Initialize scroll animations
+        function initScrollAnimations() {
+            const sections = document.querySelectorAll('.section');
+            
+            // Convert NodeList to Array for easier manipulation
+            const sectionsArray = Array.from(sections);
+            
+            // Add scroll event listener
+            window.addEventListener('scroll', () => {
+                // Header visibility toggle
+                const header = document.querySelector('header');
+                let lastScroll = window.scrollY;
+                
+                if (lastScroll > 100) {
+                    if (lastScroll > window.scrollY) {
+                        header.classList.add('visible');
+                        header.classList.remove('hidden');
+                    } else {
+                        header.classList.add('hidden');
+                        header.classList.remove('visible');
+                    }
+                } else {
+                    header.classList.remove('hidden');
+                }
+                
+                // Section animations
+                sectionsArray.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (sectionTop < windowHeight * 0.75) {
+                        section.classList.add('active');
+                    }
+                });
+            });
+            
+            // Trigger initial check in case sections are already visible
+            window.dispatchEvent(new Event('scroll'));
+        }
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu');
+        const nav = document.querySelector('nav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = nav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                nav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Show transition overlay
+                    const overlay = document.querySelector('.transition-overlay');
+                    overlay.style.display = 'block';
+                    overlay.classList.remove('active');
+                    
+                    // Force reflow to restart animation
+                    void overlay.offsetWidth;
+                    
+                    overlay.classList.add('active');
+                    
+                    // Scroll to target after transition
+                    setTimeout(() => {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        
+                        // Hide overlay after scroll completes
+                        setTimeout(() => {
+                            overlay.style.display = 'none';
+                        }, 1000);
+                    }, 600);
+                }
+            });
+        });
+
+        // Tab System
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.getAttribute('data-tab');
+                
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                btn.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Testimonial Slider
+        const testimonials = document.querySelectorAll('.testimonial');
+        const dots = document.querySelectorAll('.slider-dot');
+        let currentTestimonial = 0;
+
+        function showTestimonial(index) {
+            testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            testimonials[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentTestimonial = index;
+        }
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const slideIndex = parseInt(dot.getAttribute('data-slide'));
+                showTestimonial(slideIndex);
+            });
+        });
+
+        // Auto-rotate testimonials
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+
+        // Charts
+        function initCharts() {
+            // Admin Chart
+            const adminCtx = document.getElementById('adminChart').getContext('2d');
+            new Chart(adminCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Enrollment', 'Admissions', 'Fees', 'Grading', 'Security', 'Website'],
+                    datasets: [{
+                        label: 'Admin Module Usage',
+                        data: [85, 78, 92, 88, 95, 65],
+                        backgroundColor: [
+                            'rgba(110, 69, 226, 0.7)',
+                            'rgba(136, 211, 206, 0.7)',
+                            'rgba(110, 69, 226, 0.7)',
+                            'rgba(136, 211, 206, 0.7)',
+                            'rgba(110, 69, 226, 0.7)',
+                            'rgba(136, 211, 206, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgba(110, 69, 226, 1)',
+                            'rgba(136, 211, 206, 1)',
+                            'rgba(110, 69, 226, 1)',
+                            'rgba(136, 211, 206, 1)',
+                            'rgba(110, 69, 226, 1)',
+                            'rgba(136, 211, 206, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.7)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.7)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+
+            // Teacher Chart
+            const teacherCtx = document.getElementById('teacherChart').getContext('2d');
+            new Chart(teacherCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Attendance', 'Grading', 'Assignments', 'Communication'],
+                    datasets: [{
+                        data: [30, 25, 30, 15],
+                        backgroundColor: [
+                            'rgba(110, 69, 226, 0.7)',
+                            'rgba(136, 211, 206, 0.7)',
+                            'rgba(110, 69, 226, 0.5)',
+                            'rgba(136, 211, 206, 0.5)'
+                        ],
+                        borderColor: [
+                            'rgba(110, 69, 226, 1)',
+                            'rgba(136, 211, 206, 1)',
+                            'rgba(110, 69, 226, 1)',
+                            'rgba(136, 211, 206, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                color: 'rgba(255, 255, 255, 0.7)'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Student Chart
+            const studentCtx = document.getElementById('studentChart').getContext('2d');
+            new Chart(studentCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    datasets: [{
+                        label: 'Assignment Submissions',
+                        data: [65, 59, 80, 81, 76, 95],
+                        fill: true,
+                        backgroundColor: 'rgba(110, 69, 226, 0.2)',
+                        borderColor: 'rgba(110, 69, 226, 1)',
+                        tension: 0.4
+                    }, {
+                        label: 'Attendance',
+                        data: [80, 85, 78, 92, 88, 90],
+                        fill: true,
+                        backgroundColor: 'rgba(136, 211, 206, 0.2)',
+                        borderColor: 'rgba(136, 211, 206, 1)',
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.7)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.7)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: 'rgba(255, 255, 255, 0.7)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Initialize charts when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initCharts);
+
+        // Chatbot functionality
+        const chatbotBtn = document.getElementById('chatbotBtn');
+        const chatbotClose = document.getElementById('chatbotClose');
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        const chatbotMessages = document.getElementById('chatbotMessages');
+        const chatbotInput = document.getElementById('chatbotInput');
+        const chatbotSend = document.getElementById('chatbotSend');
+        const whatsappBtn = document.getElementById('whatsappBtn');
+
+        // Toggle chatbot window
+        chatbotBtn.addEventListener('click', () => {
+            chatbotWindow.classList.toggle('active');
+        });
+
+        // Close chatbot window
+        chatbotClose.addEventListener('click', () => {
+            chatbotWindow.classList.remove('active');
+        });
+
+        // WhatsApp button functionality
+        whatsappBtn.addEventListener('click', () => {
+            window.open('https://wa.me/971582540832', '_blank');
+        });
+
+        // Send message when Enter is pressed
+        chatbotInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Send message when send button is clicked
+        chatbotSend.addEventListener('click', sendMessage);
+
+        function sendMessage() {
+            const message = chatbotInput.value.trim();
+            if (message === '') return;
+
+            // Add user message to chat
+            addMessage(message, 'user');
+
+            // Clear input
+            chatbotInput.value = '';
+
+            // Show typing indicator
+            showTypingIndicator();
+
+            // Simulate bot response after a delay
+            setTimeout(() => {
+                removeTypingIndicator();
+                respondToMessage(message);
+            }, 1500);
+        }
+
+        function addMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
+            messageDiv.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+            messageDiv.textContent = text;
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        function showTypingIndicator() {
+            const typingDiv = document.createElement('div');
+            typingDiv.classList.add('typing-indicator');
+            typingDiv.id = 'typingIndicator';
+            typingDiv.innerHTML = `
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            `;
+            chatbotMessages.appendChild(typingDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const typingIndicator = document.getElementById('typingIndicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+
+        function respondToMessage(userMessage) {
+            const lowerMessage = userMessage.toLowerCase();
+            let response;
+
+            if (lowerMessage.includes('feature') || lowerMessage.includes('what can you do')) {
+                response = "Our School Management System includes features like:\n- Admin Management\n- Teacher's Portal\n- Student's Portal\n- AI-Proctored Exams\n- Real-time Notifications\n- Built-in School Website\nWould you like more details on any specific feature?";
+            } else if (lowerMessage.includes('price') || lowerMessage.includes('cost')) {
+                response = "Pricing varies based on your institution's size and requirements. I can connect you with our sales team for a customized quote. Would you like me to do that?";
+            } else if (lowerMessage.includes('demo') || lowerMessage.includes('try')) {
+                response = "You can request a demo by clicking the 'Request Demo' button on our website or I can arrange one for you. Would you like to schedule a demo now?";
+            } else if (lowerMessage.includes('support') || lowerMessage.includes('help')) {
+                response = "For technical support, you can:\n1. Email us at support@algonerd.com\n2. Call our support line at +1 (555) 123-4567\n3. Chat with us on WhatsApp using the button below\nHow can I assist you further?";
+            } else if (lowerMessage.includes('contact') || lowerMessage.includes('reach')) {
+                response = "You can contact us through:\n- Email: algonerd@gmail.com\n- Phone: +1 (555) 123-4567\n- WhatsApp: +971 58 254 0832\n- Website: www.algonerd.com\nIs there anything specific you'd like to inquire about?";
+            } else {
+                response = "I'm sorry, I didn't understand your question. Could you please rephrase it or ask about:\n- Features\n- Pricing\n- Demo\n- Support\n- Contact information";
+            }
+
+            addMessage(response, 'bot');
+        }
+    </script>
+</body>
 </html>
-
-<style>
-
-@import url("https://fonts.googleapis.com/css2?family=Amaranth&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Neuton:wght@700&display=swap");
-html {
-  margin: 0 auto;
-  padding: 0%;
-  box-sizing: border-box;
-}
-body {
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #2c3e50;
-}
-main {
-  display: block;
-}
-#load {
-  display: block;
-  text-align: center;
-  color: #fff;
-  font-size: 50px;
-  position: absolute;
-  top: calc(25vh);
-  left: calc(10vw);
-}
-.text {
-  padding: 0;
-  margin-left: 50px;
-  margin-top: 0;
-  font-family: "Neuton", serif;
-  animation: blinkingText 1s infinite;
-  text-shadow: 3px 3px 1px gray;
-}
-@keyframes load {
-  0% {
-	transform: scale(1);
-  }
-  100% {
-	transform: scale(0.6);
-  }
-}
-.nos{
-	background-color: #2c3e50;
-	padding: 50px;
-   
-}
-.load div {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  top: 13.333333333333336px;
-  left: 13.333333333333336px;
-  border-radius: 10px;
-  background-color: rgba(52, 73, 94, 1);
-  box-shadow: -3px 3px 0px rgba(0, 0, 0, 0.3);
-  animation: load 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
-  animation-delay: -0.3s;
-}
-.load div:nth-child(2) {
-  top: 13.333333333333336px;
-  left: 106.66666666666666px;
-  border-radius: 10px;
-  background-color: rgba(52, 73, 94, 1);
-  box-shadow: -3px 3px 0px rgba(0, 0, 0, 0.3);
-  animation-delay: -0.2s;
-}
-.load div:nth-child(3) {
-  top: 106.66666666666666px;
-  left: 13.333333333333336px;
-  border-radius: 10px;
-  background-color: rgba(52, 73, 94, 1);
-  box-shadow: -3px 3px 0px rgba(0, 0, 0, 0.3);
-  animation-delay: 0s;
-}
-.load div:nth-child(4) {
-  top: 106.66666666666666px;
-  left: 106.66666666666666px;
-  border-radius: 10px;
-  background-color: rgba(52, 73, 94, 1);
-  box-shadow: -3px 3px 0px rgba(0, 0, 0, 0.3);
-  animation-delay: -0.1s;
-}
-.spinner-cube {
-  width: 200px;
-  height: 200px;
-  display: inline-block;
-  overflow: hidden;
-}
-.load {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform: translateZ(0) scale(1);
-  backface-visibility: hidden;
-  transform-origin: 0 0;
-}
-.load div {
-  box-sizing: content-box;
-}
-#main {
-  display: none;
-  background-color: rgba(52, 73, 94, 0.329);
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-}
-@media only screen and (min-width: 340px) {
-  h1 {
-	font-size: 20px;
-  }
-}
-.mainMenu {
-  height: 100%;
-  display: block;
-  padding: 20px;
-}
-.grid-container {
-  display: grid;
-  grid-gap: 10px 10px;
-  justify-content: center;
-  grid-template-columns: auto auto auto;
-  padding: 10px;
-}
-#backButton {
-  padding: 5px;
-  width: 100px;
-}
-#resetButton {
-  padding: 5px;
-  width: 200px;
-}
-#lvlname {
-  font-size: 40px;
-}
-.grid-item {
-  padding: 10px;
-  width: 200px;
-  grid-column-start: 5;
-  grid-column-end: 1;
-  text-align: center;
-  cursor: pointer;
-}
-
-.lvlbtn {
-  width: 70px;
-  padding: 10px;
-  text-align: center;
-  font-size: 20px;
-}
-
-button {
-  font-size: 25px;
-  color: #fff;
-  border-radius: 10px;
-  background-color: rgba(52, 73, 94, 1);
-  box-shadow: -3px 3px 0px rgba(0, 0, 0, 0.3);
-  font-family: "Amaranth", sans-serif;
-  font-weight: 700;
-  border: 1px solid black;
-  text-shadow: 3px 3px 1px gray;
-  transition: all 0.15s linear 0s;
-}
-button:focus {
-  outline: none;
-}
-button:hover {
-  opacity: 0.5;
-  box-shadow: -2px 2px 0px rgba(0, 0, 0, 0.3);
-  transition: all 0.5s;
-}
-.container {
-  background-color: rgba(52, 73, 94, 0.6);
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-  padding: 20px;
-}
-h1 {
-  text-align: center;
-  color: #fff;
-  font-size: 40px;
-  font-family: "Neuton", serif;
-  margin-bottom: 30px;
-  margin-top: 0px;
-  animation: blinkingText 1.2s infinite;
-  text-shadow: 3px 3px 1px gray;
-}
-@keyframes blinkingText {
-  0% {
-	text-shadow: 3px 3px 5px rgb(230, 230, 230);
-  }
-  50% {
-	text-shadow: 3px 3px 5px rgb(180, 170, 170);
-  }
-  100% {
-	text-shadow: 3px 3px 5px rgb(255, 231, 231);
-  }
-}
-.footer {
-  display: block;
-}
-h3 {
-  text-align: center;
-  color: #fff;
-  font-family: "Neuton", serif;
-}
-#level {
-  display: none;
-  transition: all 0.15s linear 0s;
-  padding: 20px;
-}
-.level-area {
-  padding: 0%;
-}
-#about {
-  display: none;
-  transition: all 0.15s linear 0s;
-  padding: 20px;
-}
-.about-s {
-  text-align: center;
-  font-size: 20px;
-  color: #fff;
-  font-family: "Neuton", serif;
-}
-h4 {
-  margin: 0;
-  font-size: 25px;
-}
-.gameplay {
-  text-align: center;
-  font-size: 20px;
-  color: #fff;
-  font-family: "Neuton", serif;
-}
-#instruction {
-  display: none;
-  transition: all 0.15s linear 0s;
-  padding: 20px;
-}
-#lvl {
-  display: none;
-  padding: 20px;
-}
-.movement {
-  display: block;
-  padding-bottom: 20px;
-}
-.movement strong {
-  float: left;
-  width: 50%;
-  color: #fff;
-  font-size: 20px;
-  margin-bottom: 15px;
-  font-family: "Amaranth", sans-serif;
-}
-.movement b {
-  float: right;
-  width: 50%;
-  color: #fff;
-  font-size: 20px;
-  margin-bottom: 15px;
-  text-align: right;
-  font-family: "Amaranth", sans-serif;
-}
-.leveldesign {
-  margin-bottom: 20px;
-}
-hr {
-  margin: auto;
-  border-color: rgb(201, 197, 191);
-}
-.leveldesign button {
-  width: 80px;
-  padding: 15px;
-  font-size: 30px;
-  animation: blinking 2s infinite;
-}
-@keyframes blinking {
-  0% {
-	text-shadow: 1px 1px 1px rgb(230, 230, 230);
-  }
-  25% {
-	text-shadow: 1px 1px 1px rgb(230, 230, 230);
-  }
-  50% {
-	text-shadow: 1px 2px 5px rgb(255, 231, 231);
-  }
-  75% {
-	text-shadow: 1px 1px 1px rgb(230, 230, 230);
-  }
-  100% {
-	text-shadow: 1px 2px 5px rgb(255, 231, 231);
-  }
-}
-.leveldesign button:hover {
-  opacity: 1;
-  box-shadow: -1px 1px 0px rgba(0, 0, 0, 0.3);
-}
-.winner {
-  display: none;
-}
-.modal {
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(52, 73, 94, 0.9);
-  padding: 0px;
-}
-.top {
-  top: 20%;
-  position: relative;
-}
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-.win_again,
-.next_level {
-  float: left;
-  width: 100%;
-}
-
-#over {
-  display: none;
-}
-#congo {
-  display: none;
-  text-align: center;
-}
-.winner b {
-  color: #fff;
-  font-size: 25px;
-  display: block;
-  text-align: center;
-}
-#sad {
-  font-size: 50px;
-  display: block;
-  text-align: center;
-}
-#nextLvl {
-  display: none;
-}
-#congo span {
-  display: inline-block;
-  width: 30px;
-  font-size: 30px;
-  text-align: center;
-}
-#trp {
-  display: block;
-  font-size: 50px;
-}
-#star1.fill:before {
-  content: "\2605";
-  position: absolute;
-  color: gold;
-}
-#star2.fill:before {
-  content: "\2605";
-  position: absolute;
-  color: gold;
-}
-#star3.fill:before {
-  content: "\2605";
-  position: absolute;
-  color: gold;
-}
-#star4.fill:before {
-  content: "\2605";
-  position: absolute;
-  color: gold;
-}
-#star5.fill:before {
-  content: "\2605";
-  position: absolute;
-  color: gold;
-}
-.none{
-	color: black;
-}
-.none:before{
-	color: black;
-}
-img {
-  width: 100%;
-}
-#exit{
-	display: none;
-
-}
-.exit{
-  text-align: center;
-  color: #fff;
-  font-size: 40px;
-  font-family: "Neuton", serif;
-  margin-top: 30%;
-  animation: blinkingText .5s infinite;
-  text-shadow: 3px 3px 1px gray;
-}
-#sound{
-	display: none;
-	font-family: "Amaranth", sans-serif;
-}
-.yesno{
-  margin-top: 70%;
-}
-#sound h5{
-  text-align: center;
-  font-size: 25px;
-  color: #fff;
-}
-.none{
-	
-}
-</style>
-
-
-<script>
-    alert('I don’t want our love to be a fleeting season; I want it to be a timeless journey that lasts forever.');
-/*
-function loadPage() {
-   setTimeout(showPage, 3000);
-}
- loadPage();
- 
-function showPage() {
-  document.getElementById("load").style.display = "none";
- document.getElementById("sound").style.display = "block";
- alert("Thanks for Watching 😊");
-}
-///////////////////////////////////
-//Tab open and close//
-//Get the items from DOM//
-
-var about = document.getElementById("about");
-var instruction = document.getElementById("instruction");
-var menu = document.getElementById("menu");
-var level = document.getElementById("level");
-var moves = document.getElementById("moves");
-var moved = document.getElementById("moved");
-var levels = document.getElementById("lvl");
-
-//Toggle area start//
-//instrcution button
-function Instruction() {
-  menu.style.display = "none";
-  level.style.display = "none";
-  instruction.style.display = "block";
-  btnClickAll.play();
-}
-//About button
-function About() {
-  menu.style.display = "none";
-  level.style.display = "none";
-  about.style.display = "block";
-  btnClickAll.play();
-}
-//Level button
-function Level() {
-  menu.style.display = "none";
-  about.style.display = "none";
-  level.style.display = "block";
-  btnClickAll.play();
-}
-//Back button
-function backButton() {
-  menu.style.display = "block";
-  if (
-	about.style.display == "block" ||
-	instruction.style.display == "block" ||
-	level.style.display == "block" || levels.style.display == "block"
-  ) {
-	menu.style.display = "block";
-	level.style.display = "none";
-	about.style.display = "none";
-	instruction.style.display = "none";
-	levels.style.display = "none";
-  }
-  btnClickAll.play();
-}
-///////Toggle area end////////
-///////Tab open and close end////////
-
-
-//////////////////////////////////////////
-// All Audio Resources
-var btnClicked = document.getElementById("clickClip");
-var btnClickAll = document.getElementById("clickClip2");
-var gameoverClip = document.getElementById("gameoverClip");
-var congratsClip = document.getElementById("congratsClip");
-
-
-//Level Button Selection
-var b1 = document.getElementById("b1");
-var b2 = document.getElementById("b2");
-var b3 = document.getElementById("b3");
-var b4 = document.getElementById("b4");
-var b5 = document.getElementById("b5");
-var b6 = document.getElementById("b6");
-var b7 = document.getElementById("b7");
-var b8 = document.getElementById("b8");
-var b9 = document.getElementById("b9");
-var b10 = document.getElementById("b10");
-var b11 = document.getElementById("b11");
-var b12 = document.getElementById("b12");
-var b13 = document.getElementById("b13");
-var b14 = document.getElementById("b14");
-var b15 = document.getElementById("b15");
-
-
-//Level Design start//
-//Buttons of puzzle//
-var btn1 = document.getElementById("btn1");
-var btn2 = document.getElementById("btn2");
-var btn3 = document.getElementById("btn3");
-var btn4 = document.getElementById("btn4");
-var btn5 = document.getElementById("btn5");
-var btn6 = document.getElementById("btn6");
-var btn7 = document.getElementById("btn7");
-var btn8 = document.getElementById("btn8");
-var btn9 = document.getElementById("btn9");
-
-//Game over and Winner Values//
-var tryagain = document.getElementById("playAgain");
-var next = document.getElementById("nextLvl");
-var levelName = document.getElementById("lvlname");
-var winner = document.getElementById("winner");
-var qoute = document.getElementById("qoute");
-var over = document.getElementById("over");
-var congo = document.getElementById("congo");
-var lvlc = document.getElementById("lvlc");
-
-// Start Rating Value
-var star1 = document.getElementById("star1");
-var star2 = document.getElementById("star2");
-var star3 = document.getElementById("star3");
-var star4 = document.getElementById("star4");
-var star5 = document.getElementById("star5");
-
-// Values for all in Game button
-//This will use on every level decleration
-function buttonValues(
-  value1,
-  value2,
-  value3,
-  value4,
-  value5,
-  value6,
-  value7,
-  value8,
-  value9
-) {
-  this.value1 = value1;
-  this.value2 = value2;
-  this.value3 = value3;
-  this.value4 = value4;
-  this.value5 = value5;
-  this.value6 = value6;
-  this.value7 = value7;
-  this.value8 = value8;
-  this.value9 = value9;
-
-  btn1.value = value1;
-  btn1.innerText = value1;
-
-  btn2.value = value2;
-  btn2.innerText = value2;
-
-  btn3.value = value3;
-  btn3.innerText = value3;
-
-  btn4.value = value4;
-  btn4.innerText = value4;
-
-  btn5.value = value5;
-  btn5.innerText = value5;
-
-  btn6.value = value6;
-  btn6.innerText = value6;
-
-  btn7.value = value7;
-  btn7.innerText = value7;
-
-  btn8.value = value8;
-  btn8.innerText = value8;
-
-  btn9.value = value9;
-  btn9.innerText = value9;
-}
-
-// Movement for Button one//
-btn1.addEventListener("click", function () {
-
-//   
-//   The value of Button 1 can transferred to:
-//   1  = 2, 4
-//   
-
-  //get the value of button 1.
-  var val = btn1.value;
-  //If value of button 2 is undefined,
-  //then the value of button 1 will be transferred to 2.
-  if (btn2.value == "") {
-	btn2.innerText = val;
-	btn1.innerText = "";
-	btn2.value = val;
-	btn1.value = "";
-
-  }
-  //If value of button 4 is undefined,
-  //then the value of button 1 will be transferred to button 4.
-  else if (btn4.value == "") {
-	btn4.innerText = val;
-	btn1.innerText = "";
-	btn4.value = val;
-	btn1.value = "";
-  }
-
-  //THIS PART IS SAME TO ALL SECTION//
-  //Execute if true
-  winnerCode();
-  //movement will be decrease on evevry click
-  moved.value--;
-  //movement will be increase as text on evevry click
-  moved.innerText++;
-  //Execute if true
-  gameOver();
-  //Sound on everyclick
-  btnClicked.play();
-
-});
-
-btn2.addEventListener("click", function () {
-
-// 
-// The value of Button 2 can transferred to:
-// 2  = 1, 3, 5
-// 
-
-  //get the value of button 2.
-  var val = btn2.value;
-
-  //If value of button 1 is undefined,
-  //then the value of button 2 will be transferred to button 1.
-  if (btn1.value == "") {
-	btn1.innerText = val;
-	btn2.innerText = "";
-	btn1.value = val;
-	btn2.value = "";
-  } 
-  //If value of button 3 is undefined,
-  //then the value of button 2 will be transferred to button 3.
-  else if (btn3.value == "") {
-	btn3.innerText = val;
-	btn2.innerText = "";
-	btn3.value = val;
-	btn2.value = "";
-  } 
-  //If value of button 5 is undefined,
-  //then the value of button 2 will be transferred to button 5.
-  else if (btn5.value == "") {
-	btn5.innerText = val;
-	btn2.innerText = "";
-	btn5.value = val;
-	btn2.value = "";
-  }
-  winnerCode();
-  moved.value--;
-  moved.innerText++;
-  gameOver();
-  btnClicked.play();
-});
-btn3.addEventListener("click", function () {
-
-// 
-// The value of Button 3 can transferred to:
-// 3  = 2, 6
-// 
-
-  //get the value of button 3.
-  var val = btn3.value;
-
-  //If value of button 2 is undefined,
-  //then the value of button 3 will be transferred to button 2.
-  if (btn2.value == "") {
-	btn2.innerText = val;
-	btn3.innerText = "";
-	btn2.value = val;
-	btn3.value = "";
-  } 
-  //If value of button 6 is undefined,
-  //then the value of button 3 will be transferred to button 6.
-  else if (btn6.value == "") {
-	btn6.innerText = val;
-	btn3.innerText = "";
-	btn6.value = val;
-	btn3.value = "";
-  }
-  winnerCode();
-  moved.value--;
-  moved.innerText++;
-  gameOver();
-  btnClicked.play();
-});
-
-btn4.addEventListener("click", function () {
-
-// 
-// The value of Button 4 can transferred to:
-// 4  = 1, 5, 7
-// 
-
-  //get the value of button 4.
-  var val = btn4.value;
-
-  //If value of button 1 is undefined,
-  //then the value of button 4 will be transferred to button 1.
-  if (btn1.value == "") {
-	btn1.innerText = val;
-	btn4.innerText = "";
-	btn1.value = val;
-	btn4.value = "";
-  } 
-  //If value of button 5 is undefined,
-  //then the value of button 4 will be transferred to button 5.
-  else if (btn5.value == "") {
-	btn5.innerText = val;
-	btn4.innerText = "";
-	btn5.value = val;
-	btn4.value = "";
-  } 
-  //If value of button 7 is undefined,
-  //then the value of button 4 will be transferred to button 7.
-  else if (btn7.value == "") {
-	btn7.innerText = val;
-	btn4.innerText = "";
-	btn7.value = val;
-	btn4.value = "";
-  }
-  winnerCode();
-  moved.value--;
-  moved.innerText++;
-  gameOver();
-  btnClicked.play();
-});
-
-btn5.addEventListener("click", function () {
-// 
-// The value of Button 5 can transferred to:
-// 5  = 2, 4, 6, 8
-// 
-
-  //get the value of button 5.
-  var val = btn5.value;
-
-  //If value of button 2 is undefined,
-  //then the value of button 5 will be transferred to button 2.
-  if (btn2.value == "") {
-	btn2.innerText = val;
-	btn5.innerText = "";
-	btn2.value = val;
-	btn5.value = "";
-  } 
-  //If value of button 4 is undefined,
-  //then the value of button 5 will be transferred to button 4.
-  else if (btn4.value == "") {
-	btn4.innerText = val;
-	btn5.innerText = "";
-	btn4.value = val;
-	btn5.value = "";
-  } 
-  //If value of button 6 is undefined,
-  //then the value of button 5 will be transferred to button 6.
-  else if (btn6.value == "") {
-	btn6.innerText = val;
-	btn5.innerText = "";
-	btn6.value = val;
-	btn5.value = "";
-  } 
-  //If value of button 8 is undefined,
-  //then the value of button 5 will be transferred to button 8.
-  else if (btn8.value == "") {
-	btn8.innerText = val;
-	btn5.innerText = "";
-	btn8.value = val;
-	btn5.value = "";
-  }
-  winnerCode();
-  moved.value--;
-  moved.innerText++;
-  gameOver();
-  btnClicked.play();
-});
-
-btn6.addEventListener("click", function () {
-
-// 
-// The value of Button 6 can transferred to:
-// 6  = 3, 5, 9
-// 
-
-  //get the value of button 6.
-  var val = btn6.value;
-
-  //If value of button 3 is undefined,
-  //then the value of button 6 will be transferred to button 3.
-  if (btn3.value == "") {
-	btn3.innerText = val;
-	btn6.innerText = "";
-	btn3.value = val;
-	btn6.value = "";
-  } 
-  //If value of button 5 is undefined,
-  //then the value of button 6 will be transferred to button 5.
-  else if (btn5.value == "") {
-	btn5.innerText = val;
-	btn6.innerText = "";
-	btn5.value = val;
-	btn6.value = "";
-  } 
-  //If value of button 9 is undefined,
-  //then the value of button 6 will be transferred to button 9.
-  else if (btn9.value == "") {
-	btn9.innerText = val;
-	btn6.innerText = "";
-	btn9.value = val;
-	btn6.value = "";
-  }
-  winnerCode();
-  moved.value--;
-  moved.innerText++;
-  gameOver();
-  btnClicked.play();
-});
-
-btn7.addEventListener("click", function () {
-
-// 
-// The value of Button 7 can transferred to:
-// 7  = 4, 8
-// 
-
-  //get the value of button 7.
-  var val = btn7.value;
-
-  //If value of button 4 is undefined,
-  //then the value of button 7 will be transferred to button 4.
-  if (btn4.value == "") {
-	btn4.innerText = val;
-	btn7.innerText = "";
-	btn4.value = val;
-	btn7.value = "";
-  } 
-  //If value of button 8 is undefined,
-  //then the value of button 7 will be transferred to button 8.
-  else if (btn8.value == "") {
-	btn8.innerText = val;
-	btn7.innerText = "";
-	btn8.value = val;
-	btn7.value = "";
-  }
-  winnerCode();
-  moved.value--;
-  moved.innerText++;
-  gameOver();
-  btnClicked.play();
-});
-
-btn8.addEventListener("click", function () {
-
-// 
-// The value of Button 8 can transferred to:
-// 8  = 5, 7, 9
-// 
-
-  //get the value of button 8.
-  var val = btn8.value;
-
-  //If value of button 5 is undefined,
-  //then the value of button 8 will be transferred to button 5.
-  if (btn5.value == "") {
-	btn5.innerText = val;
-	btn8.innerText = "";
-	btn5.value = val;
-	btn8.value = "";
-  } 
-  //If value of button 7 is undefined,
-  //then the value of button 8 will be transferred to button 7.
-  else if (btn7.value == "") {
-	btn7.innerText = val;
-	btn8.innerText = "";
-	btn7.value = val;
-	btn8.value = "";
-  } 
-  //If value of button 9 is undefined,
-  //then the value of button 8 will be transferred to button 9.
-  else if (btn9.value == "") {
-	btn9.innerText = val;
-	btn8.innerText = "";
-	btn9.value = val;
-	btn8.value = "";
-  }
-  winnerCode();
-  moved.value--;
-  moved.innerText++;
-  gameOver();
-  btnClicked.play();
-});
-
-btn9.addEventListener("click", function () {
-
-
-// The value of Button 9 can transferred to:
-// 9  = 6, 8
-
-
-  //get the value of button 9.
-
-  //If value of button 6 is undefined,
-  //then the value of button 9 will be transferred to button 6.
-  var val = btn9.value;
-  if (btn6.value == "") {
-	btn6.innerText = val;
-	btn9.innerText = "";
-	btn6.value = val;
-	btn9.value = "";
-  } 
-  //If value of button 8 is undefined,
-  //then the value of button 9 will be transferred to button 8.
-  else if (btn8.value == "") {
-	btn8.innerText = val;
-	btn9.innerText = "";
-	btn8.value = val;
-	btn9.value = "";
-  }
-  winnerCode();
-  moved.value--;
-  moved.innerText++;
-  gameOver();
-  btnClicked.play();
-});
-
-//Try Again Function of Failed complete Level
-function tryAgain() {
-  winner.style.display = "none";
-  //Reset Button will be work as try again
-  resetButton();
-}
-
-//Next Level Function for after Every level complete
-function nextLevel() {
-  winner.style.display = "none";
-
-
-  //If Level one is completed then go to level two(same logic for each function)
-  if (b1.value == "1") {
-	levelTwo();
-  } else if (b2.value == "1") {
-	levelThree();
-  } else if (b3.value == "1") {
-	levelFour();
-  } else if (b4.value == "1") {
-	levelFive();
-  } else if (b5.value == "1") {
-	levelSix();
-  } else if (b6.value == "1") {
-	levelSeven();
-  } else if (b7.value == "1") {
-	levelEight();
-  } else if (b8.value == "1") {
-	levelNine();
-  } else if (b9.value == "1") {
-	levelTen();
-  } else if (b10.value == "1") {
-	levelEleven();
-  } else if (b11.value == "1") {
-	levelTwelve();
-  } else if (b12.value == "1") {
-	levelThirteen();
-  } else if (b13.value == "1") {
-	levelFourteen();
-  } else if (b14.value == "1") {
-	levelFifteen();
-  } else if (b15.value == "1") {
-	levelOne();
-  }
-}
-
-//One time function for Congrats, this one function will hendle all winning part of the game
-function winning(val1, val2, val3, val4, val5, val6, val7, val8, val9, val10, val11, val12) {
-  this.val1 = val1;
-  this.val2 = val2;
-  this.val3 = val3;
-  this.val4 = val4;
-  this.val5 = val5;
-  this.val6 = val6;
-  this.val7 = val7;
-  this.val8 = val8;
-  this.val9 = val9;
-  this.val10 = val10;
-  this.val11 = val11;
-  this.val12 = val12;
-  next.style.display = val1;
-  next.style.innerText = val2;
-  tryagain.innerText = val3;
-  qoute.innerHTML = val4;
-  over.style.display = val5;
-  congo.style.display = val6;
-  winner.style.display = val7;
-  star1.className = val8;
-  star2.className = val9;
-  star3.className = val10;
-  star4.className = val11;
-  star5.className = val12;
-
-
-}
-
-//So this is the logical part of winner
-function winnerCode() {
-
-  //if each buttons values is puzzled same then condition will try, then it will execute each block by the value of movement
-  if (
-	btn1.value == 1 &&
-	btn2.value == 2 &&
-	btn3.value == 3 &&
-	btn4.value == 4 &&
-	btn5.value == 5 &&
-	btn6.value == 6 &&
-	btn7.value == 7 &&
-	btn8.value == 8 &&
-	btn9.value == ""
-  ) {
-		   //If puzzle completed within given moves then you will get rating
-	if (moved.innerText < "20") {
-	  new winning("block", "Next Level", "Play Again", "Congratulations!<hr>", "none", "block", "block", "fill", "fill", "fill", "fill", "fill");
-	  congratsClip.play();
-	} else if (moved.innerText < "30") {
-	  new winning("block", "Next Level", "Play Again", "Congratulations!<hr>", "none", "block", "block", "fill", "fill", "fill", "fill", "none");
-	  congratsClip.play();
-	} else if (moved.innerText < "40") {
-	  new winning("block", "Next Level", "Play Again", "Congratulations!<hr>", "none", "block", "block", "fill", "fill", "fill", "none", "none");
-	  congratsClip.play();
-	} else if (moved.innerText < "50") {
-	  new winning("block", "Next Level", "Play Again", "Congratulations!<hr>", "none", "block", "block", "fill", "fill", "none", "none", "none");
-	  congratsClip.play();
-	} else if (moved.innerText < "60") {
-	  new winning("block", "Next Level", "Play Again", "Congratulations!<hr>", "none", "block", "block", "fill", "none", "none", "none", "none");
-	  congratsClip.play();
-	}
-  }
-
-}
-
-//One time function for game over, this one function will hendle all lossing part of the game
-function overG(v1, v2, v3, v4, v5, v6) {
-  this.v1 = v1;
-  this.v2 = v2;
-  this.v3 = v2;
-  this.v4 = v4;
-  this.v5 = v5;
-  this.v6 = v6;
-
-  next.style.display = v1;
-  tryagain.innerText = v2;
-  qoute.innerHTML = v3;
-  over.style.display = v4;
-  congo.style.display = v5;
-  winner.style.display = v6;
-
-}
-
-//So this is the logical part of loser
-function gameOver() {
-  //if all moves finish then your game is over
-  if (moved.value == 0) {
-	new overG("none", "Try Again", "Game Over<hr>", "block", "none", "block");
-	gameoverClip.play();
-	congratsClip.pause();
-  }
-}
-//this is pretty simple function for reset all the value
-function resetButton() {
-  //when you will start the game play it will assign 1 value for the level you are playing
-  //so if you click on level 1 then it will assign 1 to b1(lvl 1) and rest of levels will be undefined
-  //then when you will tap on reset button it will check the values and execute the rest of things
-  //Isn't simple? :)
-  if (b1.value == "1") {
-	levelOne();
-  } else if (b2.value == "1") {
-	levelTwo();
-  } else if (b3.value == "1") {
-	levelThree();
-  } else if (b4.value == "1") {
-	levelFour();
-  } else if (b5.value == "1") {
-	levelFive();
-  } else if (b6.value == "1") {
-	levelSix();
-  } else if (b7.value == "1") {
-	levelSeven();
-  } else if (b8.value == "1") {
-	levelEight();
-  } else if (b9.value == "1") {
-	levelNine();
-  } else if (b10.value == "1") {
-	levelTen();
-  } else if (b11.value == "1") {
-	levelEleven();
-  } else if (b12.value == "1") {
-	levelTwelve();
-  } else if (b13.value == "1") {
-	levelThirteen();
-  } else if (b14.value == "1") {
-	levelFourteen();
-  } else if (b15.value == "1") {
-	levelFifteen();
-  }
-}
-
-/////////////////////////////////////////////////////////
-//Rest of part is pretty simple I just assigned values and DOM values for every Levels
-function levelOne() {
-  levelName.innerHTML = "Level One" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("1", "2", "3", "4", "", "5", "6", "7", "8");
-  moves.innerText = 20;
-  moves.value = 20;
-  moved.innerText = 0;
-  moved.value = 20;
-  btnClickAll.play();
-  b1.value = "1";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "";
-}
-function levelTwo() {
-  levelName.innerHTML = "Level Two" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("1", "2", "3", "4", "8", "6", "5", "7", "");
-  moves.innerText = 20;
-  moves.value = 20;
-  moved.innerText = 0;
-  moved.value = 20;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "1";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "";
-}
-function levelThree() {
-  levelName.innerHTML = "Level Three" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("1", "2", "3", "4", "5", "", "6", "7", "8");
-  moves.innerText = 30;
-  moves.value = 30;
-  moved.innerText = 0;
-  moved.value = 30;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "1";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "";
-  b13.value = "";
-  b14.value = "";
-  b15.value = "";
-}
-function levelFour() {
-  levelName.innerHTML = "Level Four" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-
-  new buttonValues("", "2", "1", "3", "4", "5", "6", "7", "8");
-  moves.innerText = 40;
-  moves.value = 40;
-  moved.innerText = 0;
-  moved.value = 40;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "1";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "";
-  b13.value = "";
-  b14.value = "";
-  b15.value = "";
-}
-function levelFive() {
-  levelName.innerHTML = "Level Five" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("1", "2", "", "4", "5", "6", "7", "8", "3");
-  moves.innerText = 40;
-  moves.value = 40;
-  moved.innerText = 0;
-  moved.value = 40;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "1";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "";
-  b13.value = "";
-  b14.value = "";
-  b15.value = "";
-}
-function levelSix() {
-  levelName.innerHTML = "Level Six" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("4", "1", "7", "3", "5", "6", "2", "8", "");
-  moves.innerText = 50;
-  moves.value = 50;
-  moved.innerText = 0;
-  moved.value = 50;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "1";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "";
-  b13.value = "";
-  b14.value = "";
-  b15.value = "";
-}
-function levelSeven() {
-  levelName.innerHTML = "Level Seven" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("3", "2", "5", "6", "8", "4", "7", "1", "");
-  moves.innerText = 50;
-  moves.value = 50;
-  moved.innerText = 0;
-  moved.value = 50;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "1";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "";
-  b13.value = "";
-  b14.value = "";
-  b15.value = "";
-}
-function levelEight() {
-  levelName.innerHTML = "Level Eight" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("8", "4", "3", "2", "7", "1", "5", "6", "");
-  moves.innerText = 60;
-  moves.value = 60;
-  moved.innerText = 0;
-  moved.value = 60;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "1";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "";
-  b13.value = "";
-  b14.value = "";
-  b15.value = "";
-}
-function levelNine() {
-  levelName.innerHTML = "Level Nine" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("6", "1", "3", "8", "7", "4", "2", "5", "");
-  moves.innerText = 60;
-  moves.value = 60;
-  moved.innerText = 0;
-  moved.value = 60;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "1";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "";
-  b13.value = "";
-  b14.value = "";
-  b15.value = "";
-}
-function levelTen() {
-  levelName.innerHTML = "Level Ten" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("6", "4", "5", "2", "7", "1", "3", "8", "");
-  moves.innerText = 60;
-  moves.value = 60;
-  moved.innerText = 0;
-  moved.value = 60;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "1";
-  b11.value = "";
-  b12.value = "";
-  b13.value = "";
-  b14.value = "";
-  b15.value = "";
-}
-function levelEleven() {
-  levelName.innerHTML = "Level Eleven" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("1", "3", "6", "5", "2", "4", "7", "8", "");
-  moves.innerText = 60;
-  moves.value = 60;
-  moved.innerText = 0;
-  moved.value = 60;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "1";
-  b12.value = "";
-  b13.value = "";
-  b14.value = "";
-  b15.value = "";
-}
-function levelTwelve() {
-  levelName.innerHTML = "Level Twelve" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("6", "3", "5", "8", "1", "7", "2", "4", "");
-  moves.innerText = 60;
-  moves.value = 60;
-  moved.innerText = 0;
-  moved.value = 60;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "1";
-  b13.value = "";
-  b14.value = "";
-  b15.value = "";
-}
-function levelThirteen() {
-  levelName.innerHTML = "Level Thirteen" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("8", "1", "4", "3", "2", "7", "5", "6", "");
-  moves.innerText = 60;
-  moves.value = 60;
-  moved.innerText = 0;
-  moved.value = 60;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "";
-  b13.value = "1";
-  b14.value = "";
-  b15.value = "";
-}
-function levelFourteen() {
-  levelName.innerHTML = "Level Fourteen" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("6", "8", "1", "2", "3", "7", "5", "4", "");
-  moves.innerText = 60;
-  moves.value = 60;
-  moved.innerText = 0;
-  moved.value = 60;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "";
-  b13.value = "";
-  b14.value = "1";
-  b15.value = "";
-}
-function levelFifteen() {
-  levelName.innerHTML = "Level Fifteen" + "<hr>";
-  levels.style.display = "block";
-  level.style.display = "none";
-  menu.style.display = "none";
-  new buttonValues("4", "7", "2", "6", "5", "3", "8", "1", "");
-  moves.innerText = 60;
-  moves.value = 60;
-  moved.innerText = 0;
-  moved.value = 60;
-  btnClickAll.play();
-  b1.value = "";
-  b2.value = "";
-  b3.value = "";
-  b4.value = "";
-  b5.value = "";
-  b6.value = "";
-  b7.value = "";
-  b8.value = "";
-  b9.value = "";
-  b10.value = "";
-  b11.value = "";
-  b12.value = "";
-  b13.value = "";
-  b14.value = "";
-  b15.value = "1";
-}
-  var playClip = document.getElementById("Clip");
-function soundTrue(){
-
-  playClip.play();
-  playClip.volume = 0.2;
-	document.getElementById("sound").style.display = "none";
-	document.getElementById("main").style.display = "block";
-	
-}
-function soundFalse(){
-  playClip.pause();
-	document.getElementById("sound").style.display = "none";
-	document.getElementById("main").style.display = "block";
-}
-
-function exitGame(){
-	document.getElementById("main").style.display = "none";
-	document.getElementById("exit").style.display = "block";
-	playClip.pause();
-}
-/////////////////////////
-///////THE END//////////
-*/
-</script>
